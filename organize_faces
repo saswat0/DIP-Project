@@ -1,0 +1,9 @@
+#!/bin/bash 
+
+rm "$1/subject01.glasses.gif"
+for entry in $(ls $1)
+do
+  mkdir -p "$1/${entry:7:2}"
+  mv "$1/$entry" "$1/${entry:7:2}"
+done
+rm -r "$1/tx"
